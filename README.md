@@ -1,8 +1,43 @@
 # AUDITOR
 
-Event Submission Endpoint
-Endpoint URL
+## How to run the service
+- Open a terminal window and navigate to the directory where the shell file is located.
+- Make sure the file has executable permissions by running the following command:
+```
+chmod +x auditor_log_server.sh
+```
+- Run the shell script by executing the following command:
+```
+./start_auditor_server.sh
+```
 
+## How to test the service
+- With the server running, you can now run the unit tests by running the following command in a separate terminal window:
+```
+python3 -m unittest TestAuditorServerAPI.py
+```
+### CURL commands
+- Additionally, the service can be tested executing the following commands:
+```
+curl -X POST \
+  http://localhost:8000/events \
+  -H 'Content-Type: application/json' \
+  -H 'X-API-Key: api_key' \
+  -d '{
+    "event_type": "customer_created",
+    "user_id": "777",
+    "name": "George Washington",
+    "email": "george.washington@canonical.com"
+  }'
+```
+```
+curl -X GET \
+  'http://localhost:8000/events?user_id=777&event_type=customer_created' \
+  -H 'X-API-Key: api_key'
+```
+
+## Event Submission Endpoint
+### Endpoint URL
 ```
 POST /events
 ```
