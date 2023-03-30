@@ -8,7 +8,7 @@ chmod +x auditor_log_service.sh
 ```
 - Run the shell script by executing the following command:
 ```
-./start_auditor_server.sh
+./start_auditor_service.sh
 ```
 
 ## How to test the service
