@@ -4,7 +4,7 @@
 - Open a terminal window and navigate to the directory where the shell file is located.
 - Make sure the file has executable permissions by running the following command:
 ```
-chmod +x auditor_log_server.sh
+chmod +x auditor_log_service.sh
 ```
 - Run the shell script by executing the following command:
 ```
